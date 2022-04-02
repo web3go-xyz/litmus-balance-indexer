@@ -17,7 +17,6 @@ export async function handleBlock(block: SubstrateBlock): Promise<void> {
   let blockNumber = block.block.header.number.toBigInt();
 
   let events = block.events;
-  let accounts4snapshot: string[] = [];
   for (let i = 0; i < events.length; i++) {
     let event = events[i];
     const {
@@ -63,12 +62,6 @@ export async function handleBlock(block: SubstrateBlock): Promise<void> {
           break;
       }
 
-      for (const a of accounts) {
-        if (accounts4snapshot.length > 0 && accounts4snapshot.indexOf(a) > -1) {
-          continue;
-        }
-        accounts4snapshot.push(a);
-      }
     }
   }
 }
