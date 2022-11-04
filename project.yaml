@@ -1,15 +1,21 @@
-specVersion: 0.2.0
-name: balance-indexer
-version: 1.0.0
-description: ''
+specVersion: 1.0.0
+description: 'litmus-balance-indexer'
 repository: ''
 schema:
   file: ./schema.graphql
+runner:
+  node:
+    name: "@subql/node"
+    version: ">=1.2.1"
+  query:
+    name: "@subql/query"
+    version: ">=1.2.1"
 network:
   genesisHash: '0xda5831fbc8570e3c6336d0d72b8c08f8738beefec812df21ef2afc2982ede09c'
   endpoint: 'wss://rpc.litmus-parachain.litentry.io'
 dataSources:
-  - kind: substrate/Runtime
+  - name: main
+    kind: substrate/Runtime
     startBlock: 1
     mapping:
       file: ./dist/index.js

@@ -1,5 +1,5 @@
 {
-  "name": "balance-indexer",
+  "name": "litmus-balance-indexer",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
@@ -17,9 +17,9 @@
   "author": "team@web3go.xyz",
   "license": "Apache License 2.0",
   "devDependencies": {
-    "@polkadot/api": "^6",
+    "@polkadot/api": "^9.0.0",
+    "@subql/cli": "latest",
     "@subql/types": "latest",
-    "typescript": "^4.5.4",
-    "@subql/cli": "^0.16.2"
+    "typescript": "^4.6.2"
   }
 }
